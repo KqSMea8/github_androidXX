@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+colorPrimary—导航栏颜色
+colorPrimaryDark—通知栏颜色
+colorAccent—控件选中后颜色-->
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+
+    <color name="red">#ff0000</color><!--红色 -->
+    <color name="divider2bg">#e4e4e4</color>
+    <color name="divider2white">#d3d3d3</color>
+    <color name="actionbar_bg">#09ABF5</color>
+    <color name="gray_text">#999999</color>
+    <color name="black_text">#323232</color>
+    <color name="gray">#808080</color><!--灰色 -->
+    <color name="bg">#f2f2f2</color>
+    <color name="blue">#0000ff</color><!--蓝色 -->
+    <color name="white">#FFFFFF</color><!--白色-->
+    <color name="selectbg">#f2f2f2</color>
+    <color name="image_backgroud">#cccccc</color>
+</resources>

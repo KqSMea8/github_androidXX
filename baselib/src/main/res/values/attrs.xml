@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="StatusBarHeightView">
+    <attr name="use_type" format="integer">
+        <enum name="use_height" value="0" />
+        <enum name="use_padding_top" value="1" />
+    </attr>
+</declare-styleable>
+
+
+    <!-- view.TitleIndicator -->
+    <declare-styleable name="TitleIndicator">
+        <attr name="titlePadding" format="dimension" />
+        <!-- Left/right padding of not active view titles. -->
+        <attr name="clipPadding" format="dimension" />
+        <attr name="textColor" format="color|reference" />
+        <attr name="textSizeNormal" format="dimension" />
+        <attr name="textSizeSelected" format="dimension" />
+        <attr name="footerLineHeight" format="dimension" />
+        <attr name="footerColor" format="color" />
+        <attr name="footerTriangleHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>

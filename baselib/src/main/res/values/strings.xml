@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">baselib</string>
+
+
+    <!--iv_loading-->
+    <string name="loading">载入中···</string>
+</resources>
