@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bsoft.baselib.base.BaseActivity;
+
 import com.bsoft.baselib.widget.BsoftActionBar;
 
 public class MainActivity extends BaseActivity {

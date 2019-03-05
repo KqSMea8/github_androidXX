@@ -3,12 +3,14 @@ package com.bsoft.baselib.base;
 import android.app.Dialog;
 import android.arch.lifecycle.Observer;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -26,12 +28,17 @@ import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.ExitUtil;
 import com.bsoft.baselib.util.RxUtil;
 import com.bsoft.baselib.util.ScreenUtil;
+import com.bsoft.baselib.util.StatusBarUtil;
 import com.bsoft.baselib.util.StringUtil;
+import com.bsoft.baselib.widget.AutoCardView;
 import com.bsoft.baselib.widget.BsoftActionBar;
 import com.bsoft.baselib.widget.dialog.LoadingDialog;
 import com.bsoft.baselib.widget.loading.LoadViewHelper;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.zhy.autolayout.AutoFrameLayout;
+import com.zhy.autolayout.AutoLinearLayout;
+import com.zhy.autolayout.AutoRelativeLayout;
 //import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 
@@ -51,6 +58,16 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         this.baseContext = this;
         loadingDialog = new LoadingDialog();
         rxPermissions = new RxPermissions(this);
+        setStatusBarColor();
+    }
+
+    protected void setStatusBarColor() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            //设置状态栏颜色为白色
+            getWindow().setStatusBarColor(ContextCompat.getColor(baseContext, R.color.colorPrimary));
+            //设置状态栏字体为黑色
+            StatusBarUtil.setStatusBarLightMode(getWindow());
+        }
     }
 
     public abstract void findView();
@@ -60,6 +77,35 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         hideKeyboard();
         finish();
     }
+
+
+    @Override
+    public View onCreateView(String name, Context context, AttributeSet attrs) {
+        View view = null;
+        if (name.equals("FrameLayout")) {
+            view = new AutoFrameLayout(context, attrs);
+        }
+
+        if (name.equals("LinearLayout")) {
+            view = new AutoLinearLayout(context, attrs);
+        }
+
+        if (name.equals("RelativeLayout")) {
+            view = new AutoRelativeLayout(context, attrs);
+        }
+        if (name.equals("android.support.v7.widget.CardView")) {
+            view = new AutoCardView(context, attrs);
+        }
+
+        return (View) (view != null ? view : super.onCreateView(name, context, attrs));
+    }
+
+
+
+
+
+
+
 
     /**
      * 提示框（统一风格）
@@ -381,5 +427,8 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         actionBar.setTitleColor(ContextCompat.getColor(baseContext, getActionBarTitleColor()));
         actionBar.setActionTxtColor(ContextCompat.getColor(baseContext, getActionBarActionColor()));
     }
+
+
+
 
 }
