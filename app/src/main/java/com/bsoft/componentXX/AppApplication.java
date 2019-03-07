@@ -5,6 +5,7 @@ import android.content.Intent;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.AppContext;
 import com.bsoft.baselib.BaseApplication;
+import com.tencent.mmkv.MMKV;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
 public class AppApplication extends BaseApplication {
@@ -25,5 +26,6 @@ public class AppApplication extends BaseApplication {
             ARouter.openLog();
         }
         ARouter.init(this);
+        MMKV.initialize(this);
     }
 }

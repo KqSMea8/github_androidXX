@@ -1,4 +1,4 @@
-package com.bsoft.baselib.util;
+package com.bsoft.commonlib.util;
 
 import android.content.Context;
 import android.text.TextUtils;

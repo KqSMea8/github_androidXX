@@ -1,14 +1,11 @@
 package com.bsoft.baselib.base;
 
 import android.app.Dialog;
-import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -26,10 +23,9 @@ import android.widget.Toast;
 import com.bsoft.baselib.R;
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.ExitUtil;
-import com.bsoft.baselib.util.RxUtil;
 import com.bsoft.baselib.util.ScreenUtil;
-import com.bsoft.baselib.util.StatusBarUtil;
-import com.bsoft.baselib.util.StringUtil;
+
+import com.bsoft.baselib.util.statusBarUtil.StatusBarUtil;
 import com.bsoft.baselib.widget.AutoCardView;
 import com.bsoft.baselib.widget.BsoftActionBar;
 import com.bsoft.baselib.widget.dialog.LoadingDialog;
@@ -59,15 +55,34 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         loadingDialog = new LoadingDialog();
         rxPermissions = new RxPermissions(this);
         setStatusBarColor();
+
+
     }
 
     protected void setStatusBarColor() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-            //设置状态栏颜色为白色
-            getWindow().setStatusBarColor(ContextCompat.getColor(baseContext, R.color.colorPrimary));
-            //设置状态栏字体为黑色
-            StatusBarUtil.setStatusBarLightMode(getWindow());
+//        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+//            //设置状态栏颜色为白色
+//            getWindow().setStatusBarColor(ContextCompat.getColor(baseContext, R.color.colorPrimary));
+//            //设置状态栏字体为黑色
+//            StatusBarUtil.setStatusBarLightMode(getWindow());
+//
+//        }
+
+
+        //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
+        StatusBarUtil.setRootViewFitsSystemWindows(this,true);    //在baseActivity 不起作用
+        //设置状态栏透明
+        StatusBarUtil.setTranslucentStatus(this);
+        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
+        StatusBarUtil.setStatusBarColor(this,getResources().getColor(R.color.colorPrimary));
+        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
+        if (!StatusBarUtil.setStatusBarDarkTheme(this, true)) {
+            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
+            //这样半透明+白=灰, 状态栏的文字能看得清
+            StatusBarUtil.setStatusBarColor(this,0x55000000);
         }
+
+
     }
 
     public abstract void findView();
@@ -236,7 +251,7 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         View viewDialog = LayoutInflater.from(baseContext).inflate(R.layout.layout_alert_list_dialog, null);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ScreenUtil.getScreenWidth(), LinearLayout.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(viewDialog, lp);
-        if (!StringUtil.isEmpty(title)) {
+        if (!TextUtils.isEmpty(title)) {
             TextView tv_title = (TextView) dialog.findViewById(R.id.tv_title);
             tv_title.setText(title);
         }
@@ -426,6 +441,7 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         actionBar.setBackGround(ContextCompat.getColor(baseContext, getActionBarBg()));
         actionBar.setTitleColor(ContextCompat.getColor(baseContext, getActionBarTitleColor()));
         actionBar.setActionTxtColor(ContextCompat.getColor(baseContext, getActionBarActionColor()));
+
     }
 
 
