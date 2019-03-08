@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">module_splash</string>
+
+
+    <!--引导页-->
+    <integer-array name="guide_res">
+        <item>@drawable/guide01</item>
+        <item>@drawable/guide02</item>
+        <item>@drawable/guide03</item>
+    </integer-array>
+</resources>

@@ -30,15 +30,8 @@ public class EffectUtil {
                         ObjectAnimator obj= ObjectAnimator.ofFloat(v, "alpha",0.3f,1.0f);
                         obj.start();
                         if(!ExitUtil.canClick(v)) {//多次点击拦截事件传递
-//                                obj.addListener(new AnimatorListenerAdapter() {
-//                                    @Override
-//                                    public void onAnimationEnd(Animator animation) {
-//                                        v.performClick();
-//                                    }
-//                                });
                             return true;
                         }
-                        
                         break;
                     }
                     case MotionEvent.ACTION_CANCEL:
@@ -124,8 +117,6 @@ public class EffectUtil {
         });
         motionEventObservable.connect();
     }
-
-
 
     public interface Listener{
         void onDownLisener(View v, MotionEvent event);

@@ -35,10 +35,8 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.zhy.autolayout.AutoFrameLayout;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
-//import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-
-
 import java.util.List;
+
 
 public abstract  class BaseActivity extends RxAppCompatActivity {
     public BaseActivity baseActivity;
@@ -56,19 +54,9 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         rxPermissions = new RxPermissions(this);
         setStatusBarColor();
 
-
     }
 
     protected void setStatusBarColor() {
-//        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-//            //设置状态栏颜色为白色
-//            getWindow().setStatusBarColor(ContextCompat.getColor(baseContext, R.color.colorPrimary));
-//            //设置状态栏字体为黑色
-//            StatusBarUtil.setStatusBarLightMode(getWindow());
-//
-//        }
-
-
         //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
         StatusBarUtil.setRootViewFitsSystemWindows(this,true);    //在baseActivity 不起作用
         //设置状态栏透明

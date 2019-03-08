@@ -16,3 +16,5 @@ gradlew.bat
 app/src/androidTest/
 gradle/
 
+libs/
+src/main/res/drawable/

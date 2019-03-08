@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bsoft.module_splash">
+    <application android:theme="@style/AppThemeS">
+    <activity android:name=".LoadingActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+        <activity android:name=".guide.GuideActivity"/>
+
+    <!--    <activity android:name=".LoadingActivity"/>
+-->
+
+    </application>
+</manifest>

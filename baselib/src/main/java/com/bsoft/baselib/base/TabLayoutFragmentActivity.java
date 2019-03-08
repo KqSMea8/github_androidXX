@@ -6,23 +6,16 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.util.Pair;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.TextView;
 
 
 import com.bsoft.baselib.R;
 import com.bsoft.baselib.bean.TabInfo;
 import com.bsoft.baselib.util.DensityUtil;
+import com.bsoft.baselib.util.LogUtil;
 import com.bsoft.baselib.util.TabUtil;
-import com.bsoft.baselib.util.TabUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,7 +103,7 @@ public abstract class TabLayoutFragmentActivity extends BaseActivity {
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			Log.e("arg0",position+"=======```````````");
+			LogUtil.LOGE(position+"=======```````````");
 			return tabs.get(position).getName();
 		}
 	}
@@ -155,7 +148,7 @@ public abstract class TabLayoutFragmentActivity extends BaseActivity {
 		if (intent != null) {
 			mCurrentTab = intent.getIntExtra(EXTRA_TAB, mCurrentTab);
 		}
-		Log.d(TAG, "mTabs.size() == " + mTabs.size() + ", cur: " + mCurrentTab);
+		LogUtil.LOGE( "mTabs.size() == " + mTabs.size() + ", cur: " + mCurrentTab);
 		myAdapter = new MyAdapter(getSupportFragmentManager(), mTabs);
 
 		mViewPager = (ViewPager) findViewById(R.id.mViewPager);

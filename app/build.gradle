@@ -115,6 +115,7 @@ buildTypes {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-   // api project(':baselib')
+    // api project(':baselib')
     api project(':commonlib')
+    api project(':module_splash')
 }

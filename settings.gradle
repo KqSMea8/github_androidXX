@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':commonlib', ':testlib'
+include ':app', ':baselib', ':commonlib', ':testlib', ':module_splash'

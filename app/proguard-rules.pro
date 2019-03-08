@@ -89,11 +89,11 @@
 -keep public class * extends android.preference.Preference
 -keep public class * extends android.view.View
 -keep public class com.android.vending.licensing.ILicensingService
-
+-keep public class * extends android.support.multidex.MultiDexApplication
+-keep class android.support.** {*;}
 #保持这个v4、v7包下面的所有的类里面的所有内容都不混淆
 -keep public class * extends android.support.v4.app.Fragment
 -keep public class * extends android.support.v7.app.AppCompatActivity
-
 # 对于R（资源）下的所有类及其方法，都不能被混淆
 -keep class **.R$* {
     *;
@@ -178,6 +178,7 @@ public static ** valueOf(java.lang.String);
     <fields>;
     <methods>;
 }
+
 ####################################################################################################
 
 

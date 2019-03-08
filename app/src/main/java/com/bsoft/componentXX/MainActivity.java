@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bsoft.baselib.base.BaseActivity;
 
 import com.bsoft.baselib.base.TabLayoutFragmentActivity;
@@ -15,19 +16,22 @@ import com.bsoft.baselib.bean.TabInfo;
 import com.bsoft.baselib.util.ScreenUtil;
 import com.bsoft.baselib.util.statusBarUtil.StatusBarUtil;
 import com.bsoft.baselib.widget.BsoftActionBar;
+import com.bsoft.commonlib.RouterPath;
+import com.bsoft.commonlib.util.TMmkv;
 import com.bsoft.componentXX.fragment.XFragment;
 
 import java.util.List;
 
+@Route(path = RouterPath.MAINTAB)
 public class MainActivity extends TabLayoutFragmentActivity {
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setRootViewFitsSystemWindows(this,true);
+       StatusBarUtil.setRootViewFitsSystemWindows(this, true);
         findView();
+
     }
 
     @Override
