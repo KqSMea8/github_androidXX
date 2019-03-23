@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <!--这个是隐藏的布局，然后通过动态的设置高度达到效果-->
+    <LinearLayout
+        android:id="@+id/ll_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/bt1"
+        android:background="@color/actionbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="demo库"
+        android:gravity="center"/>
+
+
+
+</LinearLayout>

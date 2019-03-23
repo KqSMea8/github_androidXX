@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/bt1"
+        android:background="@color/actionbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="demo库"
+        android:gravity="center"/>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bsoft.commonlib.widget.LinearLineWrapLayout
+        android:id="@+id/layApp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg"
+        android:orientation="vertical" />
+
+</android.support.v4.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bsoft.commonlib.widget.viewpager.LRViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/flay"
+        android:layout_gravity="center"
+        android:background="@color/transparent" />
+
+    <FrameLayout
+        android:id="@+id/flay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:paddingBottom="5dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dip"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/lay1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/f1_n"
+                    style="@style/AppBottomMenuImg"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_home_n" />
+
+                <ImageView
+                    android:id="@+id/f1_p"
+                    style="@style/AppBottomMenuImg"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_home_p" />
+                <TextView
+                    android:id="@+id/f1_t_n"
+                    android:text="首页"
+                    android:layout_below="@+id/f1_n"
+                    style="@style/AppBottomMenuTextN"
+                    />
+                <TextView
+                    android:id="@+id/f1_t_p"
+                    android:text="首页"
+                    android:layout_below="@+id/f1_n"
+                    style="@style/AppBottomMenuTextP"
+                    />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/lay2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/f2_n"
+                    style="@style/AppBottomMenuImg"
+                    android:src="@drawable/ic_service_n" />
+
+                <ImageView
+                    android:id="@+id/f2_p"
+                    style="@style/AppBottomMenuImg"
+                    android:src="@drawable/ic_service_p" />
+                <TextView
+                    android:id="@+id/f2_t_n"
+                    android:text="服务"
+                    android:layout_below="@+id/f2_n"
+                    style="@style/AppBottomMenuTextN"
+                    />
+                <TextView
+                    android:id="@+id/f2_t_p"
+                    android:text="服务"
+                    android:layout_below="@+id/f2_n"
+                    style="@style/AppBottomMenuTextP"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/lay3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/f3_n"
+                    style="@style/AppBottomMenuImg"
+                    android:src="@drawable/ic_msg_n" />
+
+                <ImageView
+                    android:id="@+id/f3_p"
+                    style="@style/AppBottomMenuImg"
+                    android:src="@drawable/ic_msg_p" />
+                <TextView
+                    android:id="@+id/f3_t_n"
+                    android:text="消息"
+                    android:layout_below="@+id/f3_n"
+                    style="@style/AppBottomMenuTextN"
+                    />
+                <TextView
+                    android:id="@+id/f3_t_p"
+                    android:text="消息"
+                    android:layout_below="@+id/f3_n"
+                    style="@style/AppBottomMenuTextP"
+                    />
+                <TextView
+                    android:id="@+id/tv_unread_msg_count"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/red_round_shape"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/white"
+                    tools:text="12"
+                    android:textSize="9sp"
+                    tools:visibility="visible"
+                   android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/lay4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/f4_n"
+                    style="@style/AppBottomMenuImg"
+                    android:src="@drawable/ic_my_n" />
+
+                <ImageView
+                    android:id="@+id/f4_p"
+                    style="@style/AppBottomMenuImg"
+                    android:src="@drawable/ic_my_p" />
+                <TextView
+                    android:id="@+id/f4_t_n"
+                    android:text="我的"
+                    android:layout_below="@+id/f4_n"
+                    style="@style/AppBottomMenuTextN"
+                    />
+                <TextView
+                    android:id="@+id/f4_t_p"
+                    android:text="我的"
+                    android:layout_below="@+id/f4_n"
+                    style="@style/AppBottomMenuTextP"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+
+</RelativeLayout>

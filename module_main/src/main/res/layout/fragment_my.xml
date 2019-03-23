@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+    >
+
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:id="@+id/diagonalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="540px"
+        diagonal:diagonal_angle="10"
+        android:elevation="0dp"
+        android:paddingBottom="40px"
+        diagonal:diagonal_direction="left"
+        diagonal:diagonal_position="bottom"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        >
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/diagonallayout_background"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Hugh Jackman"
+            android:text="丁晓华"
+            android:textColor="@color/white"
+            android:layout_gravity="top|left"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginLeft="60px"
+            android:layout_marginTop="250px"
+            android:textSize="20sp"
+            />
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="80px"
+            android:src="@drawable/set"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60px"
+            android:orientation="horizontal"
+            android:layout_marginTop="320px"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="ACTOR"
+                android:text="主任医生"
+                android:textColor="@android:color/white"
+                android:layout_gravity="top|left"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="PRODUCER"
+                android:text="东台市金海社区卫生服务中心"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_gravity="top|left"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="20px"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+   <!-- <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_avatar"
+        android:layout_width="140px"
+        android:layout_height="140px"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="400px"
+        android:elevation="30px"
+        app:actualImageScaleType="focusCrop"
+        app:fadeDuration="300"
+        app:failureImage="@drawable/avatar_none"
+        app:failureImageScaleType="fitCenter"
+        app:placeholderImage="@drawable/avatar_none"
+        app:placeholderImageScaleType="fitCenter"
+        app:retryImage="@drawable/avatar_none"
+        app:retryImageScaleType="fitCenter"
+        app:roundAsCircle="true"
+        app:roundingBorderColor="@color/white"
+        app:roundingBorderWidth="1dp" />
+-->
+    <com.bsoft.commonlib.widget.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_marginTop="460px"
+        >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diagonalLayout"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:fontFamily="sans-serif-condensed"
+                android:text="签约居民"
+                tools:text="qqqqq"
+                android:textColor="#3E3E3E"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="290人"
+                tools:text="1.9k"
+                android:textStyle="bold"
+                android:textColor="@color/deepskyblue"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="10px"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diagonalLayout"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="服务包"
+                tools:text="wwww"
+                android:textColor="#3E3E3E"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="20px"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16个"
+                android:textStyle="bold"
+                tools:text="1.9k"
+                android:textColor="@color/deepskyblue"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="10px"
+                android:textSize="14sp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.bsoft.commonlib.widget.LinearLineWrapLayout
+        android:id="@+id/lay_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="560px"
+        android:orientation="vertical"
+        tools:layout_height="100dp" />
+
+
+   <!-- <com.bsoft.lib_common.widget.MyMenuOptionsView
+        android:layout_marginTop="281dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:img_left_src = "@drawable/audio_play_right_full"
+        app:img_right_src = "@drawable/arrow_right"
+        app:title_left = "预约记录"
+        app:imgLpadding = "15dp"
+        app:imgRpadding = "15dp"
+        app:tvLpaddingTop = "15dp"
+        app:tvLpaddingBottom = "15dp"
+        app:imgLmargin = "8dp"
+        app:imgRmargin = "8dp"
+        app:leftTvSize = "16sp"
+        app:rightTvSize ="16sp"
+        app:title_right = "请选择"
+        android:id="@+id/test"
+        app:title_right_color = "@color/black"
+        android:background="@color/white"/>-->
+
+
+</RelativeLayout>

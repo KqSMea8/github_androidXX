@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <com.bsoft.baselib.widget.BsoftActionBar
+        android:id="@+id/actionbar"
+        style="@style/BsoftActionBar">
+    </com.bsoft.baselib.widget.BsoftActionBar>
+
+    <Button
+        android:id="@+id/bt1"
+        android:background="@color/actionbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="sp库"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/bt2"
+        android:background="@color/actionbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="mmkv库"
+        android:gravity="center"/>
+
+
+</LinearLayout>

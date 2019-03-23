@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bsoft.module_main">
+
+
+    <application android:theme="@style/AppThemeS">
+        <activity android:name=".MainTabActivity" />
+    </application>
+</manifest>
