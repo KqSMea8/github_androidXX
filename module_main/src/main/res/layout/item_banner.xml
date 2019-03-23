@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<com.facebook.drawee.view.SimpleDraweeView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+
+    fresco:fadeDuration="300"
+    fresco:actualImageScaleType="fitXY"
+    fresco:failureImage="@drawable/pic_default"
+    fresco:failureImageScaleType="fitXY"
+    fresco:placeholderImage="@drawable/pic_default"
+    fresco:placeholderImageScaleType="fitXY"
+    fresco:retryImage="@drawable/pic_default"
+    fresco:retryImageScaleType="fitXY"
+    fresco:roundAsCircle="false"
+
+    />-->
+
+<ImageView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="fitXY"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+<!--
+
+<com.facebook.drawee.view.SimpleDraweeView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:fresco="http://schemas.android.com/apk/res-auto"
+
+fresco:fadeDuration="300"
+fresco:actualImageScaleType="fitCenter"
+fresco:failureImage="@drawable/pic_default"
+fresco:failureImageScaleType="fitCenter"
+fresco:placeholderImage="@drawable/pic_default"
+fresco:placeholderImageScaleType="fitCenter"
+fresco:retryImage="@drawable/pic_default"
+fresco:retryImageScaleType="fitCenter"
+fresco:roundAsCircle="false"
+
+    />-->

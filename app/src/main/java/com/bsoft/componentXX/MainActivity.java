@@ -22,7 +22,7 @@ import com.bsoft.componentXX.fragment.XFragment;
 
 import java.util.List;
 
-@Route(path = RouterPath.MAINTAB)
+
 public class MainActivity extends TabLayoutFragmentActivity {
 
 

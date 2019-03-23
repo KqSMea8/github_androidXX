@@ -2,6 +2,7 @@ package com.bsoft.baselib.base;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.StringRes;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.R;
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.ExitUtil;
@@ -52,7 +54,10 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         this.baseContext = this;
         loadingDialog = new LoadingDialog();
         rxPermissions = new RxPermissions(this);
+        ARouter.getInstance().inject(this);
         setStatusBarColor();
+        //设置竖屏不可旋转
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
     }
 

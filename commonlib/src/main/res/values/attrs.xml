@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- view.TitleIndicator -->
+    <declare-styleable name="TitleIndicator">
+        <attr name="titlePadding" format="dimension" />
+        <!-- Left/right padding of not active view titles. -->
+        <attr name="clipPadding" format="dimension" />
+        <attr name="textColor" format="color|reference" />
+        <attr name="textSizeNormal" format="dimension" />
+        <attr name="textSizeSelected" format="dimension" />
+        <attr name="footerLineHeight" format="dimension" />
+        <attr name="footerColor" format="color" />
+        <attr name="footerTriangleHeight" format="dimension" />
+    </declare-styleable>
+
+    <!--add Id:none 咨询聊天 chenkai 20170916 start-->
+    <declare-styleable name="baseAudioPlay">
+        <attr name="audioType" format="integer"></attr>
+    </declare-styleable>
+    <!--add Id:none 咨询聊天 chenkai 20170916 end-->
+
+    <declare-styleable name="FlowLayout">
+        <attr name="width_space" format="dimension"/>
+        <attr name="height_space" format="dimension"/>
+    </declare-styleable>
+
+    <!-- 模仿菜单选择栏 -->
+    <declare-styleable name="my_menu_options_view_style">
+        <attr name="title_left" format="string"/>
+        <attr name="title_right" format="string"/>
+        <attr name="title_right_hint" format="boolean" />
+        <attr name="title_left_color" format="color"/>
+        <attr name="title_right_color" format="color"/>
+        <attr name="img_left_src" format="reference"/>
+        <attr name="img_right_src" format="reference"/>
+
+        <attr name="imgLpadding" format="dimension"/>
+        <attr name="imgRpadding" format="dimension"/>
+
+        <attr name="tvLpaddingTop" format="dimension"/>
+        <attr name="tvLpaddingBottom" format="dimension"/>
+
+        <attr name="imgLmargin" format="dimension"/>
+        <attr name="imgRmargin" format="dimension"/>
+
+        <attr name="leftTvSize" format="dimension"/>
+        <attr name="rightTvSize" format="dimension"/>
+    </declare-styleable>
+
+    <!-- 模仿TabLayout -->
+    <declare-styleable name="CoordinatorTabLayout">
+        <attr name="contentScrim" format="color" />
+        <attr name="tabIndicatorColor" format="color" />
+        <attr name="tabTextColor" format="color" />
+    </declare-styleable>
+
+    <!--观察者按钮-->
+    <declare-styleable name="ObserverButton">
+        <!--默认背景-->
+        <attr name="defaultBgColor" format="color|reference" />
+        <attr name="defaultBgResource" format="color|reference" />
+        <!--可以点击的背景-->
+        <attr name="pressBgColor" format="color|reference" />
+        <attr name="pressBgResource" format="color|reference" />
+        <!--默认字体颜色-->
+        <attr name="defaultTextColor" format="color" />
+        <!--可以点击的字体颜色-->
+        <attr name="pressTextColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="TagFlowLayout">
+        <attr name="auto_select_effect" format="boolean"></attr>
+        <attr name="max_select" format="integer"></attr>
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+<!--可折叠展开的textview-->
+    <declare-styleable name="CollapsedTextView">
+        <attr name="collapsedLines" format="integer" />
+        <attr name="expandedText" format="string" />
+        <attr name="collapsedText" format="string" />
+        <attr name="expandedDrawable" format="reference" />
+        <attr name="collapsedDrawable" format="reference" />
+        <attr name="tipsGravity">
+            <flag name="end" value="0" />
+            <flag name="bottom" value="1" />
+        </attr>
+        <attr name="tipsColor" format="reference|color" />
+        <attr name="tipsUnderline" format="boolean" />
+        <attr name="tipsClickable" format="boolean" />
+    </declare-styleable>
+
+
+<!--设置图片大小的textview-->
+    <declare-styleable name="TextViewDrawable">
+        <attr name="drawableLeftWidth" format="dimension"/>
+        <attr name="drawableTopWidth" format="dimension"/>
+        <attr name="drawableRightWidth" format="dimension"/>
+        <attr name="drawableLeftHeight" format="dimension"/>
+        <attr name="drawableTopHeight" format="dimension"/>
+        <attr name="drawableRightHeight" format="dimension"/>
+        <attr name="drawableBottomHeight" format="dimension"/>
+        <attr name="drawableBottomWidth" format="dimension"/>
+        <attr name="isAliganCenter" format="boolean"/>
+    </declare-styleable>
+
+
+
+    <!--wheelview-->
+    <declare-styleable name="WheelView">
+        <attr name="wheelTextColor" format="color"/>
+        <attr name="wheelTextSize" format="dimension"/>
+        <attr name="wheelShowCount" format="integer"/>
+        <attr name="wheelTotalOffsetX" format="dimension"/>
+        <attr name="wheelItemVerticalSpace" format="dimension"/>
+        <attr name="wheelRotationX" format="float"/>
+        <attr name="wheelVelocityUnits" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="WheelMaskView">
+        <attr name="wheelMaskLineColor" format="color"/>
+    </declare-styleable>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

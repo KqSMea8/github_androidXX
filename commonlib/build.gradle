@@ -18,29 +18,48 @@ android {
             }
         }
     }
-
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-
     api 'com.yqritc:recyclerview-flexibledivider:1.4.0'
-    api 'com.tencent:mmkv:1.0.17'//微信开源框架替代
-    api 'com.orhanobut:logger:1.15'//日志库
+    api 'com.tencent:mmkv:1.0.17'
+    //微信开源框架替代
+    api 'com.orhanobut:logger:1.15'
+    //日志库
+    api 'com.nineoldandroids:library:2.4.0'
+    //ZXing
+    api 'com.google.zxing:core:3.3.0'
+    //百度地图
+    api files('libs/BaiduLBS_Android.jar')
+    //友盟统计
+    api 'com.umeng.sdk:common:1.5.3'
+    api 'com.umeng.sdk:analytics:7.5.3'
+    //极光推送
+    api 'cn.jiguang.sdk:jpush:3.1.6'
+    api 'cn.jiguang.sdk:jcore:1.2.5'
+    //fastjson
+    api 'com.alibaba:fastjson:1.2.48'
+    api 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    api 'com.bigkoo:convenientbanner:2.0.5'
+    //glide
+    api 'com.github.bumptech.glide:glide:4.3.1'
+    api 'com.github.florent37:diagonallayout:1.0.9'
+    //对视图的对角线切割
+    api 'com.flaviofaria:kenburnsview:1.0.7'
+    //特效组件
+    api 'com.noober.backgorund:core:1.0.5'
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    // Fresco所需依赖
+    api 'com.facebook.fresco:fresco:0.12.0'
+// 支持 GIF 动图，需要添加
+  //  api 'com.facebook.fresco:animated-gif:0.12.0'
     api project(':baselib')
 }

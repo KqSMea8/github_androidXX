@@ -4,7 +4,7 @@
 colorPrimary—导航栏颜色
 colorPrimaryDark—通知栏颜色
 colorAccent—控件选中后颜色-->
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 

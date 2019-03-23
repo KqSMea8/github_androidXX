@@ -221,7 +221,32 @@ public static ** valueOf(java.lang.String);
 
 
 
+#Fresco图片加载
+-keep @com.facebook.common.internal.DoNotStrip class *
+-keepclassmembers class * {
+@com.facebook.common.internal.DoNotStrip *;
+}
+-keepclassmembers class * {
+native <methods>;
+}
+-dontwarn okio.**
+-dontwarn com.squareup.okhttp.**
+-dontwarn okhttp3.**
+-dontwarn javax.annotation.**
+-dontwarn com.android.volley.toolbox.**
 
+#Fresco GIF图片加载
+-keep class com.facebook.imagepipeline.animated.factory.AnimatedFactoryImpl {
+public AnimatedFactoryImpl(com.facebook.imagepipeline.bitmaps.PlatformBitmapFactory,com.facebook.imagepipeline.core.ExecutorSupplier);
+}
+
+
+#Bugly热修复
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+# tinker混淆规则
+-dontwarn com.tencent.tinker.**
+-keep class com.tencent.tinker.** { *; }
 
 
 

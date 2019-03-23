@@ -6,5 +6,5 @@ public class RouterPath {
      * app模块
      */
     //AppService的路径
-    public static final String MAINTAB = "/app/main";
+    public static final String MAINTAB = "/main/MainTabActivity";
 }

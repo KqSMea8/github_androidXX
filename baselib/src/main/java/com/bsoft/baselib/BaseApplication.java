@@ -18,7 +18,7 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        FileUriPermissionCompat.init(Constants.APPLICATION_ID + ".myFileProvider");
+
 
     }
 
