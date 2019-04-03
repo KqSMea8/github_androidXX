@@ -93,7 +93,7 @@ public class ModuleFragment extends Fragment {
         public void onItemClick(ViewGroup parent, View view, ViewHolder holder, List<ModuleVo> datas, int position) {
             ModuleVo item = datas.get(position);
             Intent intent = null;
-            Toast.makeText(getActivity().getApplicationContext(), "暂未OOOOOOOOOOOOOOOOOOOO开放", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), "暂未开放", Toast.LENGTH_SHORT).show();
            // EToastUtils.show("暂未开放");
             //// TODO: 2017/9/17 wait complete 
 //            if(TextUtils.equals("预约挂号", item.menuName)){
