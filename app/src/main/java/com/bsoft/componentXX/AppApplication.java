@@ -1,16 +1,15 @@
 package com.bsoft.componentXX;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v4.util.ArrayMap;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baidu.mapapi.SDKInitializer;
 import com.bsoft.baselib.AppContext;
 import com.bsoft.baselib.BaseApplication;
+import com.bsoft.componentXX.BuildConfig;
 import com.bsoft.baselib.util.FileUriPermissionCompat;
 import com.bsoft.baselib.util.LogUtil;
-import com.bsoft.commonlib.util.TPreferences;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
@@ -37,8 +36,8 @@ public class AppApplication extends BaseApplication {
      //   startService(new Intent(this, RemoteService.class));
 
         serviceMap = new ArrayMap<String, Object>();
-        TPreferences preferences = new TPreferences(this);
-        serviceMap.put("com.bsoft.app.preferences", preferences);
+//        TPreferences preferences = new TPreferences(this);
+//        serviceMap.put("com.bsoft.app.preferences", preferences);
         if (BuildConfig.DEBUG) {
             //开启InstantRun之后，一定要在ARouter.init之前调用openDebug
             ARouter.openDebug();
@@ -63,6 +62,7 @@ public class AppApplication extends BaseApplication {
         JPushInterface.setDebugMode(BuildConfig.DEBUG);
         JPushInterface.init(this);
         SDKInitializer.initialize(this);
+        //RxPicker.init(new FrescoImageLoader());
     }
 
     /**

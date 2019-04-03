@@ -1,30 +1,17 @@
 package com.bsoft.module_main.fragment;
 
 
-import android.Manifest;
 import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.util.Log;
+import android.arch.lifecycle.Observer;
+import android.support.annotation.Nullable;
 import android.view.View;
-import android.widget.Button;
 
 
 import com.bsoft.baselib.base.BaseFragment;
+import com.bsoft.baselib.util.LiveDataBus;
 import com.bsoft.baselib.widget.BsoftActionBar;
-import com.bsoft.commonlib.util.TMmkv;
-import com.bsoft.commonlib.util.TPreferences;
+import com.bsoft.commonlib.widget.ImageChooseView;
 import com.bsoft.module_main.R;
-
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-import io.reactivex.functions.Consumer;
 
 
 /**
@@ -54,6 +41,20 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected void initView(View rootView) {
+
+        ImageChooseView mImageChoose = (ImageChooseView) rootView.findViewById(R.id.imageChoose);
+
+        mImageChoose.setTittleAndMaxCount("上传图文照片",4,2,9);
+
+
+        LiveDataBus.get()
+                .with("key_name", String.class)
+                .observe(this, new Observer<String>() {
+                    @Override
+                    public void onChanged(@Nullable String s) {
+                        showToast(com.alibaba.fastjson.JSONArray.toJSONString(mImageChoose.getLocalPaths()));
+                    }
+                });
 
 
     }

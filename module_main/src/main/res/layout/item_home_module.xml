@@ -9,11 +9,10 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
 
-  <!--  <com.facebook.drawee.view.SimpleDraweeView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/dvHeader"
         android:layout_width="50dp"
         android:layout_height="50dp"
-
         fresco:actualImageScaleType="centerInside"
         fresco:fadeDuration="300"
         fresco:failureImage="@drawable/avatar_none"
@@ -22,13 +21,8 @@
         fresco:placeholderImageScaleType="fitCenter"
         fresco:retryImage="@drawable/avatar_none"
         fresco:retryImageScaleType="fitCenter"
-        />-->
-
-    <com.bsoft.commonlib.widget.CircleImageView
-        android:id="@+id/dvHeader"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         />
+
 
     <TextView
         android:id="@+id/tvName"

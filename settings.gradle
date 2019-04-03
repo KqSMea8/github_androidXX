@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':commonlib', ':testlib', ':module_splash', ':module_main', ':network_api'
+include ':app', ':baselib', ':commonlib', ':testlib', ':module_main', ':network_api', ':module_splash'

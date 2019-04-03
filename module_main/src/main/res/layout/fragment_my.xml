@@ -88,7 +88,7 @@
 
     </com.github.florent37.diagonallayout.DiagonalLayout>
 
-   <!-- <com.facebook.drawee.view.SimpleDraweeView
+   <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/iv_avatar"
         android:layout_width="140px"
         android:layout_height="140px"
@@ -106,12 +106,6 @@
         app:roundAsCircle="true"
         app:roundingBorderColor="@color/white"
         app:roundingBorderWidth="1dp" />
--->
-    <com.bsoft.commonlib.widget.CircleImageView
-        android:id="@+id/iv_avatar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,14 +1,14 @@
 package com.bsoft.baselib.base;
 
 import android.app.Dialog;
+import android.arch.lifecycle.Observer;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -21,24 +21,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.R;
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.ExitUtil;
+import com.bsoft.baselib.util.RxUtil;
 import com.bsoft.baselib.util.ScreenUtil;
-
-import com.bsoft.baselib.util.statusBarUtil.StatusBarUtil;
-import com.bsoft.baselib.widget.AutoCardView;
+import com.bsoft.baselib.util.StringUtil;
 import com.bsoft.baselib.widget.BsoftActionBar;
 import com.bsoft.baselib.widget.dialog.LoadingDialog;
 import com.bsoft.baselib.widget.loading.LoadViewHelper;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.zhy.autolayout.AutoFrameLayout;
-import com.zhy.autolayout.AutoLinearLayout;
-import com.zhy.autolayout.AutoRelativeLayout;
-import java.util.List;
+//import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+
+import java.util.List;
 
 public abstract  class BaseActivity extends RxAppCompatActivity {
     public BaseActivity baseActivity;
@@ -54,28 +51,6 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         this.baseContext = this;
         loadingDialog = new LoadingDialog();
         rxPermissions = new RxPermissions(this);
-        ARouter.getInstance().inject(this);
-        setStatusBarColor();
-        //设置竖屏不可旋转
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-    }
-
-    protected void setStatusBarColor() {
-        //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
-        StatusBarUtil.setRootViewFitsSystemWindows(this,true);    //在baseActivity 不起作用
-        //设置状态栏透明
-        StatusBarUtil.setTranslucentStatus(this);
-        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
-        StatusBarUtil.setStatusBarColor(this,getResources().getColor(R.color.colorPrimary));
-        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
-        if (!StatusBarUtil.setStatusBarDarkTheme(this, true)) {
-            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
-            //这样半透明+白=灰, 状态栏的文字能看得清
-            StatusBarUtil.setStatusBarColor(this,0x55000000);
-        }
-
-
     }
 
     public abstract void findView();
@@ -85,35 +60,6 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         hideKeyboard();
         finish();
     }
-
-
-    @Override
-    public View onCreateView(String name, Context context, AttributeSet attrs) {
-        View view = null;
-        if (name.equals("FrameLayout")) {
-            view = new AutoFrameLayout(context, attrs);
-        }
-
-        if (name.equals("LinearLayout")) {
-            view = new AutoLinearLayout(context, attrs);
-        }
-
-        if (name.equals("RelativeLayout")) {
-            view = new AutoRelativeLayout(context, attrs);
-        }
-        if (name.equals("android.support.v7.widget.CardView")) {
-            view = new AutoCardView(context, attrs);
-        }
-
-        return (View) (view != null ? view : super.onCreateView(name, context, attrs));
-    }
-
-
-
-
-
-
-
 
     /**
      * 提示框（统一风格）
@@ -244,7 +190,7 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         View viewDialog = LayoutInflater.from(baseContext).inflate(R.layout.layout_alert_list_dialog, null);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ScreenUtil.getScreenWidth(), LinearLayout.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(viewDialog, lp);
-        if (!TextUtils.isEmpty(title)) {
+        if (!StringUtil.isEmpty(title)) {
             TextView tv_title = (TextView) dialog.findViewById(R.id.tv_title);
             tv_title.setText(title);
         }
@@ -434,10 +380,6 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         actionBar.setBackGround(ContextCompat.getColor(baseContext, getActionBarBg()));
         actionBar.setTitleColor(ContextCompat.getColor(baseContext, getActionBarTitleColor()));
         actionBar.setActionTxtColor(ContextCompat.getColor(baseContext, getActionBarActionColor()));
-
     }
-
-
-
 
 }

@@ -19,11 +19,15 @@ import com.bsoft.commonlib.Constants;
 import com.bsoft.commonlib.recyleviewadapter.CommonAdapter;
 import com.bsoft.commonlib.recyleviewadapter.MultiItemTypeAdapter;
 import com.bsoft.commonlib.recyleviewadapter.base.ViewHolder;
+import com.bsoft.commonlib.util.ImageSizeUtil;
+import com.bsoft.commonlib.util.ImageUrlUtil;
+import com.bsoft.commonlib.util.ImageUtil;
 import com.bsoft.commonlib.util.RecyclerViewUtil;
 import com.bsoft.commonlib.util.StringUtil;
 import com.bsoft.module_main.R;
 import com.bsoft.module_main.bean.ModuleVo;
 import com.bumptech.glide.Glide;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +93,7 @@ public class ModuleFragment extends Fragment {
         public void onItemClick(ViewGroup parent, View view, ViewHolder holder, List<ModuleVo> datas, int position) {
             ModuleVo item = datas.get(position);
             Intent intent = null;
-            Toast.makeText(getActivity().getApplicationContext(), "暂未开放", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), "暂未OOOOOOOOOOOOOOOOOOOO开放", Toast.LENGTH_SHORT).show();
            // EToastUtils.show("暂未开放");
             //// TODO: 2017/9/17 wait complete 
 //            if(TextUtils.equals("预约挂号", item.menuName)){
@@ -143,13 +147,13 @@ public class ModuleFragment extends Fragment {
         @Override
         protected void convert(ViewHolder holder, ModuleVo item, int position) {
 //           
-            CircleImageView dvHeader = holder.getView(R.id.dvHeader);
+            SimpleDraweeView dvHeader = holder.getView(R.id.dvHeader);
             TextView tvName = holder.getView(R.id.tvName);
             //url表示加载图片地址，first表示的是显示图片的imageview
             //
-            Glide.with(context).load(Constants.HttpImgUrl+item.menuIconId).into(dvHeader);
-          //  ImageUtil.showNetWorkImage(dvHeader,null,item.menuIconId);
-//            ImageUtil.showNetWorkImage(dvHeader,TODO
+
+            ImageUtil.showNetWorkImage(dvHeader,null,item.menuIconId);
+//            ImageUtil.showNetWorkImage(dvHeader,
 //                    ImageSizeUtil.getHeaderUrl(
 //                            ImageUrlUtil.getUrl(Constants.HttpImgUrl ,item.menuIconId),
 //                            dvHeader.getLayoutParams().width),R.drawable.avatar_none);

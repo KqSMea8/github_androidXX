@@ -186,6 +186,12 @@ public static ** valueOf(java.lang.String);
 
 #3、App本身的
 ####################################################################################################
+
+#baidu
+-keep class com.baidu.** {*;}
+-keep class mapsdkvi.com.** {*;}
+-dontwarn com.baidu.**
+
 #RXJAVA
 -dontwarn sun.misc.**
 -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
@@ -241,9 +247,11 @@ public AnimatedFactoryImpl(com.facebook.imagepipeline.bitmaps.PlatformBitmapFact
 }
 
 
-#Bugly热修复
+#Bugly热修复support
+-dontwarn com.tencent.bugly.**support
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
+-keep class android.support.**{*;}
 # tinker混淆规则
 -dontwarn com.tencent.tinker.**
 -keep class com.tencent.tinker.** { *; }
@@ -267,3 +275,70 @@ public AnimatedFactoryImpl(com.facebook.imagepipeline.bitmaps.PlatformBitmapFact
 
 
 
+#//tinkerMultidexKeep.pro
+#//和proguard-rules.pro混淆文件同级
+
+#tinker multidex keep patterns:
+-keep public class * implements com.tencent.tinker.loader.app.ApplicationLifeCycle {
+    <init>(...);
+    void onBaseContextAttached(android.content.Context);
+}
+
+-keep public class * extends com.tencent.tinker.loader.TinkerLoader {
+    <init>(...);
+}
+
+-keep public class * extends android.app.Application {
+     <init>();
+     void attachBaseContext(android.content.Context);
+}
+
+-keep class com.tencent.tinker.loader.TinkerTestAndroidNClassLoader {
+    <init>(...);
+}
+
+#your dex.loader patterns here
+#注意 AndroidManifest.xml中的applicaion
+-keep class com.unionpay.base.UPTinkerApplication {
+    <init>(...);
+}
+
+-keep class com.tencent.tinker.loader.** {
+    <init>(...);
+}
+
+# ***************** Tinker 混淆
+-keepattributes *Annotation*
+-dontwarn com.tencent.tinker.anno.AnnotationProcessor
+-keep @com.tencent.tinker.anno.DefaultLifeCycle public class *
+
+-keep public class * extends android.app.Application {
+    *;
+}
+
+-keep public class com.tencent.tinker.loader.app.ApplicationLifeCycle {
+    *;
+}
+-keep public class * implements com.tencent.tinker.loader.app.ApplicationLifeCycle {
+    *;
+}
+
+-keep public class com.tencent.tinker.loader.TinkerLoader {
+    *;
+}
+-keep public class * extends com.tencent.tinker.loader.TinkerLoader {
+    *;
+}
+
+-keep public class com.tencent.tinker.loader.TinkerTestDexLoad {
+    *;
+}
+
+#your dex.loader pattern here
+-keep class com.tencent.tinker.loader.**
+#注意 AndroidManifest.xml中的applicaion
+-keep class com.unionpay.base.UPTinkerApplication
+
+# ***************** Tinker patch包
+# 打替换apk包的时候需要
+#-applymapping mapping.txt

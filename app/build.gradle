@@ -1,16 +1,21 @@
 apply plugin: 'com.android.application'
 apply from: 'tinker-support.gradle'
+apply plugin: 'walle'
+//apply tinker插件
+//apply plugin: 'com.tencent.tinker.patch'
 android {
 
     //配置应用的签名信息
     signingConfigs {
         release {
-            storeFile file('./Tank.key')
-            keyAlias 'tank'
-            keyPassword '198739zkl'
-            storePassword '198739zkl'
-//            v1SigningEnabled true
-//            v2SigningEnabled true
+            try {
+                storeFile file('./Tank.key')
+                keyAlias 'tank'
+                keyPassword '198739zkl'
+                storePassword '198739zkl'
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
         }
     }
     compileSdkVersion Integer.parseInt(project.compileSdkVersion)
@@ -21,10 +26,10 @@ android {
         minSdkVersion Integer.parseInt(project.minSdkVersion)
         targetSdkVersion Integer.parseInt(project.targetSdkVersion)
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         multiDexEnabled true
 
-        buildConfigField 'String', 'BUGLY_APPID','"8156685c27"'
+        buildConfigField 'String', 'BUGLY_APPID', '"8156685c27"'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -52,7 +57,7 @@ android {
         }
 
         ndk {
-            abiFilters 'armeabi-v7a'
+            abiFilters 'armeabi',"armeabi-v7a"
         }
         externalNativeBuild {
             cmake {
@@ -61,24 +66,27 @@ android {
         }
     }
 
-buildTypes {
-    debug {
-        signingConfig signingConfigs.release
-        minifyEnabled false
-        zipAlignEnabled true
-    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            zipAlignEnabled true
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
 
-    release {
-        //是否混淆
-        minifyEnabled true
-        //移除无用的资源文件,这个东西依赖于minifyEnabled，所以minifyEnabled也要为true才行
-        shrinkResources true
-        signingConfig signingConfigs.release
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        //否zip对齐
-        zipAlignEnabled true
+        release {
+            //是否混淆
+            minifyEnabled true
+            //移除无用的资源文件,这个东西依赖于minifyEnabled，所以minifyEnabled也要为true才行
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //否zip对齐
+            zipAlignEnabled true
+        }
     }
-}
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
@@ -95,21 +103,25 @@ buildTypes {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
+    //recommend
+    dexOptions {
+        jumboMode = true
+    }
     flavorDimensions 'url'
+
     productFlavors {
 
         bsoft {
             dimension 'url'
-          //  buildConfigField 'String', 'httpAppUrl', HTTP_APP_URL
-           // buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
+            //  buildConfigField 'String', 'httpAppUrl', HTTP_APP_URL
+            // buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
         }
 
-//        huawei {
-//            dimension 'url'
+        huawei {
+            dimension 'url'
 //            buildConfigField 'String', 'httpAppUrl', HTTP_APP_URL
 //            buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
-//        }
+        }
     }
 
     //实现多渠道名
@@ -117,14 +129,13 @@ buildTypes {
         flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
 
-    //重命名打包apk
-    applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            outputFileName = "pub-${variant.buildType.name}-${variant.flavorName}-v${variant.versionName}.apk"
-        }
-    }
-
-
+//   //重命名打包apk
+//    applicationVariants.all { variant ->
+//        variant.outputs.all { output ->
+//            outputFileName = "pub-${variant.flavorName}-${variant.buildType.name}-v${variant.versionName}.apk"
+//        //    outputFileName = "pub-${variant.buildType.name}-v${variant.versionName}.apk"
+//        }
+//    }
 
 
 
@@ -136,12 +147,27 @@ dependencies {
     // api project(':baselib')
     api project(':commonlib')
     api project(':module_splash')
-    //walle多渠道
+
     //   implementation 'com.meituan.android.walle:library:1.1.6'
     api project(':module_main')
 
     //Bugly热修复
     implementation 'com.tencent.bugly:crashreport_upgrade:1.3.6'
     // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker，需开发人员自己指定）
-    implementation 'com.tencent.tinker:tinker-android-lib:1.9.11'
+    implementation 'com.tencent.tinker:tinker-android-lib:1.9.9'
+//walle多渠道
+    implementation 'com.meituan.android.walle:library:1.1.6'
+
+//可选，用于生成application类
+    annotationProcessor("com.tencent.tinker:tinker-android-anno:1.9.1") { changing = true }
+    compileOnly("com.tencent.tinker:tinker-android-anno:1.9.1") { changing = true }
 }
+
+//walle {
+//    // 指定渠道包的输出路径
+//    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+//    // 定制渠道包的APK的文件名称
+//    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+//    // 渠道配置文件
+//    channelFile = new File("${project.getProjectDir()}/channel.txt")
+//}

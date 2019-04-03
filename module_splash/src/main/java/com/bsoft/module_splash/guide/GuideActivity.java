@@ -1,7 +1,6 @@
 package com.bsoft.module_splash.guide;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,7 +12,7 @@ import com.bsoft.baselib.base.BaseActivity;
 import com.bsoft.baselib.util.LogUtil;
 import com.bsoft.commonlib.RouterPath;
 import com.bsoft.commonlib.util.Installation;
-import com.bsoft.commonlib.util.TPreferences;
+import com.bsoft.commonlib.util.TMmkv;
 import com.bsoft.module_splash.R;
 
 import io.reactivex.functions.Consumer;
@@ -65,8 +64,8 @@ public class GuideActivity extends BaseActivity {
                     public void accept(@NonNull Boolean aBoolean) throws Exception {
                         if (aBoolean) {
                             // 设置设备唯一号
-                            TPreferences.getInstance().setStringData("deviceId",  Installation.id(getApplicationContext()));
-                            LogUtil.LOGE(  TPreferences.getInstance().getStringData("deviceId"));
+                            TMmkv.getInstance("key").setStringData("deviceId",  Installation.id(getApplicationContext()));
+                            LogUtil.LOGE(  TMmkv.getInstance("key").getStringData("deviceId"));
                         } else {
                             Toast.makeText(GuideActivity.this, "未能获取到设备权限!", Toast.LENGTH_SHORT).show();
                             //finish();
@@ -83,7 +82,7 @@ public class GuideActivity extends BaseActivity {
 
     public void goIn() {
         if (flag == 1) {
-            TPreferences.getInstance().setStringData("first", "1");
+            TMmkv.getInstance("key").setStringData("first", "1");
 
             ARouter.getInstance().build(RouterPath.MAINTAB).navigation();
             finish();

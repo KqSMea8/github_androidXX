@@ -1,21 +1,12 @@
 package com.bsoft.module_splash;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.KeyEvent;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 import com.bsoft.baselib.base.BaseActivity;
@@ -23,11 +14,7 @@ import com.bsoft.baselib.util.statusBarUtil.StatusBarUtil;
 import com.bsoft.commonlib.RouterPath;
 import com.bsoft.commonlib.util.StringUtil;
 import com.bsoft.commonlib.util.TMmkv;
-import com.bsoft.commonlib.util.TPreferences;
 import com.bsoft.module_splash.guide.GuideActivity;
-
-
-import io.reactivex.functions.Consumer;
 
 
 /**
@@ -44,7 +31,7 @@ public class LoadingActivity extends BaseActivity {
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        StatusBarUtil.setStatusBarColor(this,getResources().getColor(com.bsoft.baselib.R.color.white));
+        StatusBarUtil.setStatusBarColor(this,getResources().getColor(R.color.white));
         long startTime = System.currentTimeMillis();
 
         setContentView(R.layout.activity_loading);
@@ -99,9 +86,9 @@ public class LoadingActivity extends BaseActivity {
     private void redirectTo() {
 
 
-        if (!StringUtil.isEmpty(TPreferences.getInstance().getStringData(
+        if (!StringUtil.isEmpty(TMmkv.getInstance("key").getStringData(
                 "first"))
-                && "1".equals(TPreferences.getInstance().getStringData(
+                && "1".equals(TMmkv.getInstance("key").getStringData(
                 "first"))) {
             ARouter.getInstance().build(RouterPath.MAINTAB).navigation();
         } else {

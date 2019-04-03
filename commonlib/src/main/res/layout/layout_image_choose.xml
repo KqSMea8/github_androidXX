@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvChooseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="上传就医证明"
+        android:padding="@dimen/dip_15"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/tvChooseName"
+        android:id="@+id/recyclerviewImage"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_below="@id/recyclerviewImage"
+        android:id="@+id/tvCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        tools:text="0/6"
+        android:padding="@dimen/dip_15"/>
+
+</RelativeLayout>
