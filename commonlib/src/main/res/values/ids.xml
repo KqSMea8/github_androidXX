@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_view" type="id"/>
+    <item name="toolbar" type="id"/>
+    <item name="recyclerview" type="id"/>
+    <item name="viewpager" type="id"/>
+    <item name="name_tv" type="id"/>
+    <item name="change_family_layout" type="id"/>
+</resources>

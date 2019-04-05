@@ -46,13 +46,14 @@ dependencies {
     api 'cn.jiguang.sdk:jcore:1.2.5'
     //fastjson
     api 'com.alibaba:fastjson:1.2.48'
-    api 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    api('com.github.JakeWharton:ViewPagerIndicator:2.4.1') {
+        exclude(group: 'com.google.android', module: 'support-v4')
+    }
     api 'com.bigkoo:convenientbanner:2.0.5'
     api 'com.github.florent37:diagonallayout:1.0.9'
     //对视图的对角线切割
     api 'com.flaviofaria:kenburnsview:1.0.7'
     //特效组件
-    api 'com.noober.backgorund:core:1.0.5'
     // Fresco所需依赖
     api 'com.facebook.fresco:fresco:1.13.0'
     // 支持 GIF 动图，需要添加
@@ -67,6 +68,25 @@ dependencies {
   //  api project(':rxpicker')
 
     api 'com.yanzhenjie:album:2.1.3'
+
+    //  https://github.com/zaihuishou/ExpandableRecyclerview
+    api 'com.zaihuishou:expandablerecycleradapter:1.0.3'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

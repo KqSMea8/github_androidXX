@@ -30,6 +30,7 @@ import com.bsoft.baselib.util.StringUtil;
 import com.bsoft.baselib.widget.BsoftActionBar;
 import com.bsoft.baselib.widget.dialog.LoadingDialog;
 import com.bsoft.baselib.widget.loading.LoadViewHelper;
+import com.noober.background.BackgroundLibrary;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 //import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -46,6 +47,7 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
     public BsoftActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        BackgroundLibrary.inject(this);
         super.onCreate(savedInstanceState);
         this.baseActivity = this;
         this.baseContext = this;

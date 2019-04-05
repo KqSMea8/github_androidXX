@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="MainLinearLayout">
+        <item name="android:id">@id/main_view</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/bg</item>
+    </style>
+
+    <style name="MainRelativeLayout">
+        <item name="android:id">@id/main_view</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/bg</item>
+    </style>
+
+
+
+
+
+    <!--公共的线-->
+    <style name="common_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/line_height</item>
+        <item name="android:background">@color/divider2bg</item>
+    </style>
+
+    <style name="common_line_style_margin_l15">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.6dp</item>
+        <item name="android:layout_marginLeft">15dip</item>
+        <item name="android:background">@color/divider2bg</item>
+    </style>
+    <style name="common_line_style_margin_lr15">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.6dp</item>
+        <item name="android:layout_marginLeft">15dip</item>
+        <item name="android:layout_marginRight">15dip</item>
+        <item name="android:background">@color/divider2bg</item>
+    </style>
+
+    <!--公共的线-->
+
+
+
+    <!--公共黑色的字16sp-->
+    <style name="common_text_black3_medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_medium</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+    <!--公共灰色的字16sp-->
+    <style name="common_text_gray6_medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_medium</item>
+        <item name="android:textColor">@color/gray6</item>
+    </style>
+    <!--公共灰色的字16sp-->
+    <style name="common_text_gray9_medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_medium</item>
+        <item name="android:textColor">@color/gray9</item>
+    </style>
+
+    <!--公共桔色的字16sp-->
+    <style name="common_text_orange_medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_medium</item>
+        <item name="android:textColor">@color/orangetext</item>
+    </style>
+
+    <!--公共绿色的字16sp-->
+    <style name="common_text_green_medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_medium</item>
+        <item name="android:textColor">@color/greentext</item>
+    </style>
+
+    <!--公共黑色的字14sp-->
+    <style name="common_text_black3_small_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+
+
+    <!--公共灰色的字14sp-->
+    <style name="common_text_gray6_small_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:textColor">@color/gray6</item>
+    </style>
+    <!--公共灰色的字14sp-->
+    <style name="common_text_gray9_small_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:textColor">@color/gray9</item>
+    </style>
+    <!--公共桔色的字14sp-->
+    <style name="common_text_orange_small_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:textColor">@color/orangetext</item>
+    </style>
+
+    <!--公共绿色的字14sp-->
+    <style name="common_text_green_small_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:textColor">@color/greentext</item>
+    </style>
+
+    <!--公共黑色的字12sp-->
+    <style name="common_text_black3_micro_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_micro</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+    <!--公共灰色的字12sp-->
+    <style name="common_text_gray3_micro_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_micro</item>
+        <item name="android:textColor">@color/gray6</item>
+    </style>
+    <!--公共灰色的字12sp-->
+    <style name="common_text_gray9_micro_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_micro</item>
+        <item name="android:textColor">@color/gray9</item>
+    </style>
+    <!--公共桔色的字12sp-->
+    <style name="common_text_orange_micro_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_micro</item>
+        <item name="android:textColor">@color/orangetext</item>
+    </style>
+    <!--公共绿色的字12sp-->
+    <style name="common_text_green_micro_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_micro</item>
+        <item name="android:textColor">@color/greentext</item>
+    </style>
+
+
+
+    <!--公共黑色的字10sp-->
+    <style name="common_text_black3_mini_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_mini</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+    <!--公共灰色的字10sp-->
+    <style name="common_text_gray3_mini_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_mini</item>
+        <item name="android:textColor">@color/gray6</item>
+    </style>
+    <!--公共灰色的字10sp-->
+    <style name="common_text_gray9_mini_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_mini</item>
+        <item name="android:textColor">@color/gray9</item>
+    </style>
+    <!--公共桔色的字10sp-->
+    <style name="common_text_orange_mini_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_mini</item>
+        <item name="android:textColor">@color/orangetext</item>
+    </style>
+    <!--公共绿色的字10sp-->
+    <style name="common_text_green_mini_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textsize_mini</item>
+        <item name="android:textColor">@color/greentext</item>
+    </style>
+
+
+
+
+    <!-- doc -->
+    <style name="sfLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.6dp</item>
+        <item name="android:layout_marginLeft">15dip</item>
+        <item name="android:background">#b9b9b9</item>
+    </style>
+
+
+
+</resources>

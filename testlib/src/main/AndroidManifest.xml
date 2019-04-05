@@ -1,2 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bsoft.testlib" />
+    package="com.bsoft.testlib" >
+
+
+    <application android:theme="@style/AppThemeS">
+
+
+        <activity android:name=".activity.ShapeActivity"/>
+
+        <!--    <activity android:name=".LoadingActivity"/>
+    -->
+
+    </application>
+</manifest>

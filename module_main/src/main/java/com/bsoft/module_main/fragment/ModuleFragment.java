@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.commonlib.Constants;
 import com.bsoft.commonlib.recyleviewadapter.CommonAdapter;
@@ -94,6 +95,10 @@ public class ModuleFragment extends Fragment {
             ModuleVo item = datas.get(position);
             Intent intent = null;
             Toast.makeText(getActivity().getApplicationContext(), "暂未开放", Toast.LENGTH_SHORT).show();
+//            ARouter.getInstance()
+//                    .build(RouterPath.PAY_HOME_ACTIVITY)
+//                    .navigation(getActivity(), new LoginNavigationCallBack());
+
            // EToastUtils.show("暂未开放");
             //// TODO: 2017/9/17 wait complete 
 //            if(TextUtils.equals("预约挂号", item.menuName)){

@@ -7,4 +7,8 @@ public class RouterPath {
      */
     //AppService的路径
     public static final String MAINTAB = "/main/MainTabActivity";
+
+
+    //test
+    public static final String SHAPE = "/test/ShapeActivity";
 }

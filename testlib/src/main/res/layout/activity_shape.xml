@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dip_15"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/cobbAngle"
+                android:layout_width="180dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="COBB ANGLE"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:bl_corners_radius="4dp"
+                app:bl_pressed_drawable="@android:color/darker_gray"
+                app:bl_stroke_color="@android:color/black"
+                app:bl_stroke_width="1dp"
+                app:bl_unPressed_drawable="#00FFFFFF"
+                tools:ignore="MissingPrefix" />
+
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="点击边框变色"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:bl_pressed_solid_color="#FFDEAD"
+                app:bl_unPressed_solid_color="#E9967A"
+                app:bl_stroke_width="1dp"
+                app:bl_pressed_stroke_color="#C6E2FF"
+                app:bl_unPressed_stroke_color="#98FB98"
+                tools:ignore="MissingPrefix" />
+
+
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="有波纹触摸反馈的按钮"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:bl_corners_radius="20dp"
+                app:bl_pressed_drawable="#71C671"
+                app:bl_ripple_color="#71C671"
+                app:bl_ripple_enable="true"
+                app:bl_stroke_color="#8c6822"
+                app:bl_stroke_width="2dp"
+                app:bl_unPressed_drawable="#7CFC00"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/tvTest4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#8c6822"
+                android:textSize="20sp"
+                app:bl_corners_radius="4dp"
+                app:bl_solid_color="#E3B666"
+                app:bl_stroke_color="#8c6822"
+                app:bl_stroke_dashGap="5dp"
+                app:bl_stroke_dashWidth="10dp"
+                app:bl_stroke_width="2dp"
+                tools:ignore="MissingPrefix" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                app:bl_shape="oval"
+                app:bl_solid_color="#E3B666"
+                app:bl_stroke_color="#8c6822"
+                app:bl_stroke_dashGap="5dp"
+                app:bl_stroke_dashWidth="10dp"
+                app:bl_stroke_width="2dp"
+                tools:ignore="MissingPrefix" />
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:bl_corners_radius="20dp"
+                app:bl_ripple_color="#71C671"
+                app:bl_ripple_enable="true"
+                app:bl_solid_color="#7CFC00"
+                app:bl_stroke_color="#8c6822"
+                app:bl_stroke_width="2dp"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="我是LinearLayou"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="点击文字变色"
+                app:bl_pressed_textColor="#919DAF"
+                app:bl_unPressed_textColor="@android:color/holo_red_dark"
+                tools:ignore="MissingPrefix" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

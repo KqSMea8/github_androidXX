@@ -15,10 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.base.BaseFragment;
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.ScreenUtil;
 
+import com.bsoft.commonlib.RouterPath;
 import com.bsoft.commonlib.widget.LinearLineWrapLayout;
 import com.bsoft.module_main.R;
 
@@ -164,10 +166,11 @@ public class ServiceFragment extends BaseFragment {
                 if (null != intent) {
                     startActivity(intent);
                 } else {
-//                    if(title.equals("咨询记录")){
-//                        ARouter.getInstance().build(ConstantUrl.CONSULTHIS)  /**可以针对性跳转跳转动画*/
-//                                .withTransition(R.anim.activity_up_in, R.anim.activity_up_out).navigation();
-//                    }else if(title.equals("图片选择")){
+                    if(title.equals("咨询记录")){
+                        ARouter.getInstance().build(RouterPath.SHAPE)  /**可以针对性跳转跳转动画*/
+                                .withTransition(R.anim.activity_up_in, R.anim.activity_up_out).navigation();
+                    }
+// else if(title.equals("图片选择")){
 //                        ARouter.getInstance().build(ConstantUrl.IMAGECHOOSE)
 //                                .withTransition(R.anim.activity_up_in, R.anim.activity_up_out).navigation();
 //                    } else if(title.equals("TABLAYOUT")){

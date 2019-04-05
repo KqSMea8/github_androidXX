@@ -27,7 +27,11 @@
 
     <color name="main_color">#FA7C20</color>
 
-
+    <color name="black3">#333333</color><!--黑色 -->
+    <color name="gray9">#999999</color><!--黑色 -->
+    <color name="gray6">#666666</color><!--黑色 -->
+    <color name="orangetext">#FF6C0A</color><!--黑色 -->
+    <color name="greentext">#35B46F</color><!--黑色 -->
     <color name="black">#000000</color><!--黑色 -->
     <color name="white">#FFFFFF</color><!--白色-->
     <color name="snow">#fffafa</color><!--雪白色 -->
