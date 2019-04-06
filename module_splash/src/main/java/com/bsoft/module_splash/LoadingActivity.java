@@ -10,9 +10,9 @@ import android.view.animation.Animation;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 import com.bsoft.baselib.base.BaseActivity;
+import com.bsoft.baselib.util.StringUtil;
 import com.bsoft.baselib.util.statusBarUtil.StatusBarUtil;
 import com.bsoft.commonlib.RouterPath;
-import com.bsoft.commonlib.util.StringUtil;
 import com.bsoft.commonlib.util.TMmkv;
 import com.bsoft.module_splash.guide.GuideActivity;
 

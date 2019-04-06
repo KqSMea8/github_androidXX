@@ -23,7 +23,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.multidex.MultiDex;
 import android.support.v4.util.ArrayMap;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baidu.mapapi.SDKInitializer;
@@ -31,7 +30,8 @@ import com.bsoft.baselib.AppContext;
 import com.bsoft.baselib.util.FileUriPermissionCompat;
 import com.bsoft.baselib.util.LogUtil;
 import com.bsoft.commonlib.util.FrescoImageLoader;
-import com.caimuhao.rxpicker.RxPicker;
+import com.bsoft.commonlib.util.TPreferences;
+import com.bsoft.commonlib.util.NetEnvironmentUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
@@ -76,12 +76,9 @@ public class SampleApplicationLike extends DefaultApplicationLike {
         MultiDex.install(base);
         // 安装tinker
         // TinkerManager.installTinker(this); 替换成下面Bugly提供的方法
-        Beta.installTinker(this);
-//        TinkerInstaller.install(this,new DefaultLoadReporter(getApplication())
-//                ,new DefaultPatchReporter(getApplication()),new DefaultPatchListener(getApplication()), SampleResultService.class,new UpgradePatch());
-//        Tinker tinker = Tinker.with(getApplication());
+       Beta.installTinker(this);
 
-        Toast.makeText(getApplication(),"加载----------完成", Toast.LENGTH_SHORT).show();
+
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
@@ -94,7 +91,7 @@ public class SampleApplicationLike extends DefaultApplicationLike {
         super.onCreate();
         //此处写自己的Application逻辑
 
-
+        serviceMap = new ArrayMap<String, Object>();
         MultiDex.install(getApplication());
         FileUriPermissionCompat.init(BuildConfig.APPLICATION_ID + ".myFileProvider");
         AppContext.initialize(getApplication());
@@ -102,6 +99,12 @@ public class SampleApplicationLike extends DefaultApplicationLike {
         AutoLayoutConifg.getInstance().useDeviceSize();
         //  startService(new Intent(this, LocalService.class));
         //   startService(new Intent(this, RemoteService.class));
+
+        TPreferences tPreferences = new TPreferences(getApplication());
+
+        serviceMap.put("com.bsoft.app.preferences", tPreferences);
+
+
 
 
         if (BuildConfig.DEBUG) {
@@ -111,6 +114,7 @@ public class SampleApplicationLike extends DefaultApplicationLike {
         }
         ARouter.init(getApplication());
         MMKV.initialize(getApplication());
+        NetEnvironmentUtil.initConstans(getApplication());
         Fresco.initialize(getApplication());
 //        String rootDir = MMKV.initialize(this);
 //        System.out.println("mmkv root: ========" + rootDir);
@@ -140,11 +144,34 @@ public class SampleApplicationLike extends DefaultApplicationLike {
     }
 
 
+
+
+    /**
+     * 获取服务，自定义的服务key
+     *
+     * @param name
+     * @param service
+     * @return
+     */
+
+    @Override
+    public Object getSystemService(String name, Object service) {
+        if (null != serviceMap) {
+            if (this.serviceMap.containsKey(name)) {
+                return serviceMap.get(name);
+            }
+        }
+        return super.getSystemService(name,service);
+    }
+
+
+
     @Override
     public void onTerminate() {
         super.onTerminate();
         ARouter.getInstance().destroy();
         Beta.unInit();
+        serviceMap.clear();
     }
 
 

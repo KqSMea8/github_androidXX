@@ -15,12 +15,12 @@ import android.widget.Toast;
 
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.LiveDataBus;
+import com.bsoft.baselib.util.StringUtil;
 import com.bsoft.commonlib.R;
 import com.bsoft.commonlib.recyleviewadapter.CommonAdapter;
 import com.bsoft.commonlib.recyleviewadapter.MultiItemTypeAdapter;
 import com.bsoft.commonlib.recyleviewadapter.base.ViewHolder;
 import com.bsoft.commonlib.util.RecyclerViewUtil;
-import com.bsoft.commonlib.util.StringUtil;
 import com.yanzhenjie.album.Action;
 import com.yanzhenjie.album.Album;
 import com.yanzhenjie.album.AlbumFile;

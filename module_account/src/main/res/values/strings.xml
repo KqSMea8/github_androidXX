@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">module_account</string>
+    <string name="copyright">Copyright 2018 All Rights Reserved © </string>
+
+    <string name="get_ing">获取中...</string>
+    <string name="digits_idcard">ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz1234567890</string>
+    <string name="digits_number">1234567890</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="user_name_null">帐号为空，请输入</string>
+    <string name="pwd_null">密码为空，请输入</string>
+    <string name="pwd">密码</string>
+    <string name="pwd_hint">8-20位英文字母、数字或符号，至少2种字符</string>
+    <string name="pwd_toast">为了您的账户安全，请使用8位以上字母、数字或符号，至少2种混合作为密码</string>
+
+    <string name="change_api_url">切换网络</string>
+    <string name="ok">确认</string>
+    <!--引导页-->
+    <integer-array name="guide_res">
+        <item>@drawable/guide01</item>
+        <item>@drawable/guide02</item>
+        <item>@drawable/guide03</item>
+    </integer-array>
+</resources>

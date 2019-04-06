@@ -6,7 +6,11 @@ import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.AppContext;
+import com.bsoft.baselib.service.IAppService;
+import com.bsoft.commonlib.Constants;
+import com.bsoft.commonlib.RouterPath;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,7 +50,8 @@ public class RetrofitClient {
     private static final int CONNECT_TIMEOUT = 20;
     private static final int READ_TIMEOUT = 20;
     private static final int WRITE_TIMEOUT = 60;
-    private static String baseUrl = AppContext.getBaseUrl();
+  //  private static String baseUrl = AppContext.getBaseUrl();
+  private static String baseUrl = Constants.HTTP_HCN_URL_TEXT;
     private static Context mContext = AppContext.getContext();
     private BaseApiService apiService;
     private static OkHttpClient okHttpClient;

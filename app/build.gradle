@@ -30,6 +30,9 @@ android {
         multiDexEnabled true
 
         buildConfigField 'String', 'BUGLY_APPID', '"8156685c27"'
+        buildConfigField 'String', 'wechatId', '""'
+        buildConfigField 'String', 'environment', '"kaifa"'//开发
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -107,17 +110,21 @@ android {
     flavorDimensions 'url'
 
     productFlavors {
-
-        bsoft {
+        //开发环境
+        develop {
             dimension 'url'
-            //  buildConfigField 'String', 'httpAppUrl', HTTP_APP_URL
-            // buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
+            buildConfigField 'String', 'httpPcnUrl', HTTP_PCN_URL
+            buildConfigField 'String', 'httpHcnUrl', HTTP_HCN_URL
+            buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
+            buildConfigField 'String', 'httpWebUrl', HTTP_WEB_URL
         }
-
-        huawei {
+        //正式环境
+        product  {
             dimension 'url'
-//            buildConfigField 'String', 'httpAppUrl', HTTP_APP_URL
-//            buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
+            buildConfigField 'String', 'httpPcnUrl', HTTP_PCN_URL
+            buildConfigField 'String', 'httpHcnUrl', HTTP_HCN_URL
+            buildConfigField 'String', 'httpImgUrl', HTTP_IMG_URL
+            buildConfigField 'String', 'httpWebUrl', HTTP_WEB_URL
         }
     }
 
@@ -156,6 +163,7 @@ dependencies {
     annotationProcessor("com.tencent.tinker:tinker-android-anno:1.9.1") { changing = true }
     compileOnly('com.tencent.tinker:tinker-android-anno:1.9.1') { changing = true }
     implementation project(':testlib')
+    implementation project(':module_account')
 }
 
 //walle {

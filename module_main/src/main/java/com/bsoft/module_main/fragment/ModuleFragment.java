@@ -16,18 +16,18 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.util.EffectUtil;
-import com.bsoft.commonlib.Constants;
+import com.bsoft.baselib.util.StringUtil;
+import com.bsoft.commonlib.RouterPath;
+
 import com.bsoft.commonlib.recyleviewadapter.CommonAdapter;
 import com.bsoft.commonlib.recyleviewadapter.MultiItemTypeAdapter;
 import com.bsoft.commonlib.recyleviewadapter.base.ViewHolder;
-import com.bsoft.commonlib.util.ImageSizeUtil;
-import com.bsoft.commonlib.util.ImageUrlUtil;
 import com.bsoft.commonlib.util.ImageUtil;
 import com.bsoft.commonlib.util.RecyclerViewUtil;
-import com.bsoft.commonlib.util.StringUtil;
+import com.bsoft.module_account.interceptor.LoginNavigationCallBack;
+import com.bsoft.module_account.service.LoginUserService;
 import com.bsoft.module_main.R;
 import com.bsoft.module_main.bean.ModuleVo;
-import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
@@ -94,10 +94,12 @@ public class ModuleFragment extends Fragment {
         public void onItemClick(ViewGroup parent, View view, ViewHolder holder, List<ModuleVo> datas, int position) {
             ModuleVo item = datas.get(position);
             Intent intent = null;
-            Toast.makeText(getActivity().getApplicationContext(), "暂未开放", Toast.LENGTH_SHORT).show();
-//            ARouter.getInstance()
-//                    .build(RouterPath.PAY_HOME_ACTIVITY)
-//                    .navigation(getActivity(), new LoginNavigationCallBack());
+            Toast.makeText(getActivity().getApplicationContext(),
+                    "暂未开放"+((LoginUserService) ARouter.getInstance().build("/service/login/user").navigation()).getLoginState(),
+                    Toast.LENGTH_SHORT).show();
+            ARouter.getInstance()
+                    .build(RouterPath.SHAPE)
+                    .navigation(getActivity(), new LoginNavigationCallBack());
 
            // EToastUtils.show("暂未开放");
             //// TODO: 2017/9/17 wait complete 

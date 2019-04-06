@@ -1,0 +1,20 @@
+
+[
+
+  {
+    "environment": "kaifa",
+   "environmentText": "开发环境",
+    "httpHcnUrl": "http://218.92.200.226:13357/hcn-web/",
+    "httpPcnUrl": "http://218.92.200.226:13357/pcn-core/",
+    "httpImgUrl": "http://218.92.200.226:13357/hcn-web/upload/",
+    "httpWebUrl": "http://116.140.30.2:8080/web/"
+  },
+  {
+     "environment": "zhengshi",
+       "environmentText": "正式环境",
+    "httpHcnUrl": "http://218.92.200.226:13360/hcn-web/",
+    "httpPcnUrl": "http://218.92.200.226:13360/pcn-core/",
+    "httpImgUrl": "http://218.92.200.226:13360/hcn-web/upload/",
+    "httpWebUrl": "http://116.140.30.2:8080/web/"
+  }
+]

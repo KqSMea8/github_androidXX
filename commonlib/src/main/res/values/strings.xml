@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">commonlib</string>
+
+    <string name="net_error">网络错误</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="sex_not_know">未知性别</string>
 </resources>

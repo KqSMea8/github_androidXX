@@ -10,7 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField 'String', 'environment', '"zhengshi"'//正式
+        buildConfigField 'String', 'environment', '"kaifa"'//正式
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -72,7 +72,8 @@ dependencies {
     //  https://github.com/zaihuishou/ExpandableRecyclerview
     api 'com.zaihuishou:expandablerecycleradapter:1.0.3'
 
-
+    //Gson
+    api 'com.google.code.gson:gson:2.8.1'
 
 
 

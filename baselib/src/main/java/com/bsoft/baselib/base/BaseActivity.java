@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bsoft.baselib.R;
 import com.bsoft.baselib.util.EffectUtil;
 import com.bsoft.baselib.util.ExitUtil;
@@ -53,6 +54,8 @@ public abstract  class BaseActivity extends RxAppCompatActivity {
         this.baseContext = this;
         loadingDialog = new LoadingDialog();
         rxPermissions = new RxPermissions(this);
+        ARouter.getInstance().inject(this);
+
     }
 
     public abstract void findView();

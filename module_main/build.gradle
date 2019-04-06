@@ -36,9 +36,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     //   implementation 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api project(':network_api')
     api project(':commonlib')
+    implementation project(':module_account')
 }
